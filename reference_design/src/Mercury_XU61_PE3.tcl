@@ -1,5 +1,5 @@
 # ----------------------------------------------------------------------------------------------------
-# Copyright (c) 2023 by Enclustra GmbH, Switzerland.
+# Copyright (c) 2024 by Enclustra GmbH, Switzerland.
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy of
 # this hardware, software, firmware, and associated documentation files (the
@@ -225,6 +225,26 @@ set_property -dict {PACKAGE_PIN AH10  IOSTANDARD LVCMOS18  } [get_ports {I2C_USE
 set_property -dict {PACKAGE_PIN H2    IOSTANDARD LVCMOS18  } [get_ports {LED2_PL_N}]
 set_property -dict {PACKAGE_PIN E7    IOSTANDARD LVCMOS18  } [get_ports {LED3_PL_N}]
 
+# MGT Group 1
+if {$PL_MGT == "B224"} {
+  # set_property PACKAGE_PIN W4    [get_ports {MGT_TX4_P}] # GTH
+  # set_property PACKAGE_PIN W3    [get_ports {MGT_TX4_N}] # GTH
+  # set_property PACKAGE_PIN U4    [get_ports {MGT_TX5_P}] # GTH
+  # set_property PACKAGE_PIN U3    [get_ports {MGT_TX5_N}] # GTH
+  # set_property PACKAGE_PIN R4    [get_ports {MGT_TX6_P}] # GTH
+  # set_property PACKAGE_PIN R3    [get_ports {MGT_TX6_N}] # GTH
+  # set_property PACKAGE_PIN N4    [get_ports {MGT_TX7_P}] # GTH
+  # set_property PACKAGE_PIN N3    [get_ports {MGT_TX7_N}] # GTH
+  # set_property PACKAGE_PIN Y2    [get_ports {MGT_RX4_P}] # GTH
+  # set_property PACKAGE_PIN Y1    [get_ports {MGT_RX4_N}] # GTH
+  # set_property PACKAGE_PIN V2    [get_ports {MGT_RX5_P}] # GTH
+  # set_property PACKAGE_PIN V1    [get_ports {MGT_RX5_N}] # GTH
+  # set_property PACKAGE_PIN T2    [get_ports {MGT_RX6_P}] # GTH
+  # set_property PACKAGE_PIN T1    [get_ports {MGT_RX6_N}] # GTH
+  # set_property PACKAGE_PIN P2    [get_ports {MGT_RX7_P}] # GTH
+  # set_property PACKAGE_PIN P1    [get_ports {MGT_RX7_N}] # GTH
+}
+
 # MGT Group 2
 set_property -dict {PACKAGE_PIN C14   IOSTANDARD LVCMOS18  } [get_ports {MGT_TX8_P}]
 set_property -dict {PACKAGE_PIN C13   IOSTANDARD LVCMOS18  } [get_ports {MGT_TX8_N}]
@@ -278,6 +298,18 @@ set_property -dict {PACKAGE_PIN K4    IOSTANDARD LVCMOS18  } [get_ports {MGT_RX1
 set_property -dict {PACKAGE_PIN K3    IOSTANDARD LVCMOS18  } [get_ports {MGT_RX18_N}]
 set_property -dict {PACKAGE_PIN U8    IOSTANDARD LVCMOS18  } [get_ports {MGT_RX19_P}]
 set_property -dict {PACKAGE_PIN V8    IOSTANDARD LVCMOS18  } [get_ports {MGT_RX19_N}]
+
+# Clock Generator MGT RefClk2
+if {$PL_MGT == "B224"} {
+  # set_property PACKAGE_PIN Y5    [get_ports {MGT_REFCLK2_N}] # GTH
+  # set_property PACKAGE_PIN Y6    [get_ports {MGT_REFCLK2_P}] # GTH
+}
+
+# Clock Generator MGT RefClk3
+if {$PL_MGT == "B224"} {
+  # set_property PACKAGE_PIN V5    [get_ports {MGT_REFCLK3_N}] # GTH
+  # set_property PACKAGE_PIN V6    [get_ports {MGT_REFCLK3_P}] # GTH
+}
 
 # Clock Generator MGT RefClk4
 set_property -dict {PACKAGE_PIN F13   IOSTANDARD LVCMOS18  } [get_ports {MGT_REFCLK4_N}]
